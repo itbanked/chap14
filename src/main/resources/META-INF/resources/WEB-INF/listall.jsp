@@ -21,10 +21,10 @@
 </head>
 <body>
 <h1>직원 리스트</h1>
-<table class="table ">
+<table class="table table-bordered table-striped">
 <thead>
 <tr>
-<th>직원번호</th><th>직원이름</th><th>입사일</th>
+<th>직원번호</th><th>직원이름</th><th>입사일</th><th>직급</th><th>매니저번호</th><th>월급</th><th>보너스</th><th>부서번호</th>
 </tr>
 </thead>
 <tbody>
@@ -35,7 +35,8 @@
 
 %>
 <tr>
-<td><%= e.getEmpno() %></td><td><%= e.getEname() %></td><td><%= e.getHiredate() %></td>
+<td><%= e.getEmpno() %></td><td><%= e.getEname() %></td><td><%= e.getHiredate() %></td><td><%= e.getJob()%></td>
+<td><%= e.getMgr()%></td><td><%= e.getSal() %></td><td><%= e.getComm()%></td><td><%= e.getDeptno() %></td>
 </tr>
 <%-- 	<%= e.getEmpno() %>,<%= e.getEname() %>, <%= e.getHiredate() %><br> --%>
 <%
@@ -46,17 +47,18 @@
 
 <hr>
 
-<table class="table">
+<table class="table table-striped">
 <thead>
 <tr>
-<th>직원번호</th><th>직원이름</th><th>입사일</th>
+<th>직원번호</th><th>직원이름</th><th>입사일</th><th>직급</th><th>매니저번호</th><th>월급</th><th>보너스</th><th>부서번호</th>
 </tr>
 </thead>
 <tbody>
 <c:forEach var="e" items="${emps}">
 	
 	<tr>
-	<td>${e.empno}</td> <td>${e.ename}</td> <td> ${e.hiredate}</td>
+	<td>${e.empno}</td> <td>${e.ename}</td> <td> ${e.hiredate}</td><td>${e.job}</td><td>${e.mgr}</td>
+	<td>${e.sal }</td><td>${e.comm }</td><td>${e.deptno}</td>
 	</tr>
 	
 <%-- 	${e.empno}, ${e.ename}, ${e.hiredate}<br> --%>
