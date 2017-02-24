@@ -5,6 +5,8 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.Format;
+import java.text.SimpleDateFormat;
 
 import javax.sql.DataSource;
 
@@ -20,6 +22,8 @@ public class EmpTests {
 	
 	@Autowired
 	DataSource datasource;
+	
+//	SimpleDateFormat format = new SimpleDateFormat("YYYY/MM/DD입니다");
 	
 	@Test
 	public void test01_select() throws SQLException{
@@ -43,6 +47,7 @@ public class EmpTests {
 			int deptno = rs.getInt("deptno");
 			
 			System.out.println(empno +","+ ename +","+ job +","+ mgr +","+ hiredate +","+ sal +","+ comm +","+ deptno);
+//			System.out.println(empno +","+ ename +","+ job +","+ mgr +","+ format.format(hiredate) +","+ sal +","+ comm +","+ deptno);
 		}
 			
 	}
